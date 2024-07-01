@@ -1,19 +1,26 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .App {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;/* Use the full height of the viewport */
+}
+
+.header {
+  background-color: #282c34;
+  min-height: 20vh;
+  font-size: calc(20px + 2vmin);
+  color: white;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
+.main {
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
@@ -24,15 +31,65 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.square {
+  width: 120px;
+  height: 120px;
+  margin: 3px;
+  padding: 0;
+  background-color: #2982dc;
+  color:white;
+  font-size: 50px;
+  font-weight: bold;
+  border-radius: 10%;
+  line-height: 100px; /* Make sure this matches the height to center the text */
+  border-width: 0px;
+  border-color: red;
+  transition: background-color 0.3s ease, transform 0.1s ease;
+  box-sizing: border-box;
+  outline: none;
+  
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.square:active {
+  transform: translateY(0); /* Ensure no movement */
+}
+
+.square:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.board {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.board-row {
+  display: flex;
+  justify-content: center;
+}
+
+.status {
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: white;
+}
+
+.history {
+  display: flex;
+  align-items: center;
+}
+
+.mov {
+  margin-right: 30px;
+}
+
+.histButton {
+  width: 35px;
+  height: 35px;
+  border-width: 0;
+  border-radius: 100%;
+  margin: 1px;
+  cursor: pointer;
 }
